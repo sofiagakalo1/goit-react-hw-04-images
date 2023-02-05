@@ -28,7 +28,7 @@ const Gallery = () => {
         setLoading(true);
         const { hits, totalHits } = await getGalleryItems(search, page);
         setTotalHits(totalHits);
-        setItems([...items, ...hits]);
+        setItems(prevItems => [...prevItems, ...hits]);
       } catch (error) {
         setError(error.message);
       } finally {

@@ -16,7 +16,7 @@ const Modal = ({ close, bigImg }) => {
   useEffect(() => {
     document.addEventListener('keydown', closeModal);
     return () => document.removeEventListener('keydown', closeModal);
-  }, [close, bigImg]);
+  });
 
   return createPortal(
     <div className={css.overlay} onClick={closeModal}>
